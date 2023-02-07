@@ -12,8 +12,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=JavaScript&logoColor=white&style=flat)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=HTML5&logoColor=white&style=flat)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=CSS3&logoColor=white&style=flat)
-
-#### *(and Lovely Tools)*
+<br>*(and Lovely Tools)*<br>
 ![PyCharm](https://img.shields.io/badge/PyCharm-000000?logo=PyCharm&logoColor=white&style=flat)
 ![VSCode](https://img.shields.io/badge/VSCode-007ACC?logo=Visual%20Studio%20Code&logoColor=white&style=flat)
 ![JupyterNotebook](https://img.shields.io/badge/Jupyter%20Notebook-F37626?logo=Jupyter&logoColor=white&style=flat)
