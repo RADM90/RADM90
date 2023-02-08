@@ -35,11 +35,11 @@
 ## *GitHub Stats*
 [//]: # (Theme Options)
 [//]: # (https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md)
-![Streak Stats](https://[github-readme-streak-stats.herokuapp.com](https://radm90.vercel.app/)/?user=RADM90&theme=dark)
+![Streak Stats](https://github-readme-streak-stats.herokuapp.com/?user=RADM90&theme=dark)
 
-![GitHub stats](https://radm90.vercel.app/api?username=radm90&show_icons=true&theme=vision-friendly-dark)
+![GitHub stats](https://github-readme-stats-radm90.vercel.app//api?username=radm90&show_icons=true&theme=vision-friendly-dark)
 
-![Top Langs](https://radm90.vercel.app/api/top-langs/?username=radm90&layout=compact&theme=vision-friendly-dark)
+![Top Langs](https://github-readme-stats-radm90.vercel.app//api/top-langs/?username=radm90&layout=compact&theme=vision-friendly-dark)
 
 [//]: # (![Top Langs]&#40;https://github-readme-stats.vercel.app/api/top-langs/?username=RADM90&show_icons=true&theme=vision-friendly-dark&#41;)
 
