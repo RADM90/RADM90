@@ -1,0 +1,8 @@
+import pymysql
+
+USER = 'USER_ID'
+PASSWORD = 'USER_PASSWORD'
+HOST_NAME = 'DBMS_URL'
+PORT = 3306  #
+DB = 'DB_'
+CHARSET = 'utf8'
