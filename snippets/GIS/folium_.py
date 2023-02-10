@@ -11,8 +11,8 @@ start_time = time.time()
 ###
 """
 # 해양조사원 개방海 오픈API 서비스 키 (민간, http://localhost/)
-mapAuthKey = "4BF227C8708FD6DD148E68DBD"
-geoInfoAuthKey = "7F44901F325BC0CC036BFE52D"
+mapAuthKey = "MAP_AUTH_KEY"
+geoInfoAuthKey = "GEO_INFO_AUTH_KEY"
 
 # Background Tile 셋 정의
 map_set = {"BASEMAP_3857": "기본수준면", "BASEMAP_DLENG3857": "영문주기", "BASEMAP_USR3857": "일반사용자",
@@ -23,12 +23,12 @@ map_set = {"BASEMAP_3857": "기본수준면", "BASEMAP_DLENG3857": "영문주기
 m = folium.Map(location=[35.1750, 129.1251], tiles='Stamen Toner', zoom_start=13, max_zoom=16, min_zoom=5)
 
 # Map 객체에 Background Tile 수 만큼 Layer 추가
-for key, value in map_set.items():
-    folium.TileLayer(zoom_start=13, max_zoom=16, min_zoom=5,
-                     tiles='http://www.khoa.go.kr/oceanmap/' + mapAuthKey + '/' + key + '/{z}/{y}/{x}/basemapWMTS.do',
-                     # name=value + ' (' + key + ')',
-                     name=value,
-                     attr="<a href='http://www.khoa.go.kr/oceanmap/main.do'>국립해양조사원 개방해</a>").add_to(m)
+# for key, value in map_set.items():
+#     folium.TileLayer(zoom_start=13, max_zoom=16, min_zoom=5,
+#                      tiles='http://www.khoa.go.kr/oceanmap/' + mapAuthKey + '/' + key + '/{z}/{y}/{x}/basemapWMTS.do',
+#                      # name=value + ' (' + key + ')',
+#                      name=value,
+#                      attr="<a href='http://www.khoa.go.kr/oceanmap/main.do'>국립해양조사원 개방해</a>").add_to(m)
 
 # ======================================================================================================================
 """
