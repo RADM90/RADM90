@@ -1,7 +1,7 @@
 """
 # Preparation
 1. Modify login information in `login_info_sample.json` as yours, and rename file name as `login_info.json`
-2. Required libraries as follows: bs4, selenium, webdriver_manager (`pip install bs4 selenium webdriver_manager`)
+2. Required libraries as follows: bs4, selenium, webdriver_manager (`pip install bs4 selenium==3.141 webdriver_manager`)
 """
 import time
 import os
@@ -15,8 +15,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-
+# browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()))  # selenium >= 4.
+browser = webdriver.Chrome("./chromedriver")
 
 def load_login_info() -> tuple:
     item = dict(json.load(open("./login_info.json", 'r', encoding='utf-8')))
@@ -40,10 +40,10 @@ def login(username, password):
     time.sleep(3)
     id_box = browser.find_element(By.CSS_SELECTOR, "#loginForm > div > div:nth-child(1) > div > label > input")
     pw_box = browser.find_element(By.CSS_SELECTOR, "#loginForm > div > div:nth-child(2) > div > label > input")
-    login_btn = browser.find_element(By.CLASS_NAME, "#loginForm > div > div:nth-child(3) > button")
+    login_btn = browser.find_element(By.CSS_SELECTOR, "#loginForm > div > div:nth-child(3) > button")
     action = ActionChains(browser)
     action.send_keys_to_element(id_box, username).send_keys_to_element(pw_box, password).click(login_btn).perform()
-    time.sleep(3)
+    time.sleep(5)
 
     if browser.current_url.rsplit("/", 1)[-1].startswith("two_factor"):
         two_factor_code = input("Enter Two-Factor Authentication code: ")
@@ -117,3 +117,20 @@ not_follow_I = followings - followers
 print("I Don't Follow:", not_follow_I)
 print("Who Doesn't Follow me:", not_follow_me)
 
+def get_last_followers():
+    last_data = "./lastest.txt"
+    if not os.path.exists(last_data):
+        with open(last_data, 'w', encoding='utf-8') as f:
+            f.write(str(followers))
+        return False, None
+    else:
+        with open(last_data, 'r', encoding='utf-8') as f:
+            previous = set(f.read())
+        return True, list((Counter(previous) - Counter(followers)).keys())
+
+
+flag, list = get_last_followers()
+if flag:
+    print("Have unfollowed me:", list)
+else:
+    print("There is no previous data, current follower data saved into 'latest.txt' file.")
